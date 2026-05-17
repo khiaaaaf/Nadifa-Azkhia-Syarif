@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func main() {
+	var x int
+	var total, sah int
+	var suara [21]int
+
+	for {
+		fmt.Scan(&x)
+		total++
+
+		if x == 0 {
+			break
+		}
+
+		if x >= 1 && x <= 20 {
+			sah++
+			suara[x]++
+		}
+	}
+
+	fmt.Println("Suara masuk:", total)
+	fmt.Println("Suara sah:", sah)
+
+	for i := 1; i <= 20; i++ {
+		if suara[i] > 0 {
+			fmt.Printf("%d: %d\n", i, suara[i])
+		}
+	}
+}
